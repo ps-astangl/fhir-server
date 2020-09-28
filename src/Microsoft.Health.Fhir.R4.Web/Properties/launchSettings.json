@@ -27,9 +27,17 @@
                 "SqlServer:AllowDatabaseCreation": "true",
                 "SqlServer:SchemaOptions:AutomaticUpdatesEnabled": "true",
                 "TestAuthEnvironment:FilePath": "..//..//testauthenvironment.json",
-                "SqlServer:ConnectionString": "server=(local);Initial Catalog=FHIR_R4;Integrated Security=true",
+                "SqlServer:ConnectionString": "server=localghost\\SQLEXPRESS;Initial Catalog=FHIR_R4;Integrated Security=true",
                 "DataStore": "SqlServer",
-                "ASPNETCORE_ENVIRONMENT": "development"
+                "ASPNETCORE_ENVIRONMENT": "development",
+                "FhirServer:Security:Authentication:Audience" : "",
+                "FhirServer:Security:Authentication:Authority" : "",
+                "FhirServer:Security:Authorization:Roles:0:name" : "admin",
+                "FhirServer:Security:Authorization:Roles:0:resourcePermissions:0:actions:0" : "Read",
+                "FhirServer:Security:Authorization:Roles:0:resourcePermissions:0:actions:1" : "Write",
+                "FhirServer:Security:Authorization:Roles:0:resourcePermissions:0:actions:2" : "HardDelete",
+                "FhirServer:Security:EnableAadSmartOnFhirProxy" : "False",
+                "FhirServer:Security:Enabled" : "False"
             },
             "applicationUrl": "https://localhost:44348/"
         }
